@@ -17,7 +17,7 @@ public class Lab2_SeleniumIDE_use {
 	@Before
 	public void setUp(){
 		 System.setProperty("webdriver.firefox.bin","E:\\firefox-47.0.1.win64.sdk\\firefox-sdk\\bin\\firefox.exe");
-		  	System.setProperty("webdriver.firefox.marionette","E:\\Ñ§Ï°1\\Èí¼þ²âÊÔ\\geckodriver-v0.9.0-win64\\geckodriver.exe");
+		  	System.setProperty("webdriver.firefox.marionette","E:\\å­¦ä¹ 1\\è½¯ä»¶æµ‹è¯•\\geckodriver-v0.9.0-win64\\geckodriver.exe");
 		    driver = new FirefoxDriver();
 	    baseUrl = "http://121.193.130.195:8080";
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -25,7 +25,7 @@ public class Lab2_SeleniumIDE_use {
 
 	@Test
 	public void test() {
-		List<String> dataList=CSVUtils.importCsv(new File("E:\\Ñ§Ï°1\\Èí¼þ²âÊÔ\\inputgit.csv"));
+		List<String> dataList=CSVUtils.importCsv(new File("E:\\å­¦ä¹ 1\\è½¯ä»¶æµ‹è¯•\\inputgit.csv"));
         if(dataList!=null && !dataList.isEmpty()){
         	int i = 0;
             for(String data : dataList){
@@ -48,7 +48,7 @@ public class Lab2_SeleniumIDE_use {
                 driver.findElement(By.id("submit")).click();
                 String github = driver.findElement(By.xpath("//tr[3]/td[2]")).getText();
                 String name = driver.findElement(By.xpath("//tr[1]/td[2]")).getText();
-                assertEquals(data.substring(a,b),name);
+//                assertEquals(data.substring(a,b),name);
                 assertEquals(data.substring(b+1),github); 
             }
         }
